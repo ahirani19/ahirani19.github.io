@@ -254,29 +254,12 @@ p {
     margin-bottom: 50px;
 }
 
-.case-study-section.two-column {
-    display: grid;
-    grid-template-columns: 200px 1fr;
-    gap: 60px;
-    align-items: start;
-}
-
 .case-study-section h2 {
     font-family: 'futura';
     text-transform: lowercase;
     font-size: 1.8em;
     margin: 0 0 20px 0;
     color: #333;
-}
-
-.case-study-section.two-column h2 {
-    margin: 0;
-}
-
-.case-study-section .section-content {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
 }
 
 .case-study-section p {
@@ -296,37 +279,11 @@ p {
     margin: 60px 0;
 }
 
-.image-pair {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-}
-
-/* Three column layout for vertical images */
-.image-triple {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-}
-
-.image-triple .image-container {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.image-triple .image-container img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    border-radius: 8px;
-}
-
-/* Single centered vertical image */
+/* Single centered image */
 .image-single {
     display: flex;
     justify-content: center;
-    max-width: 600px;
+    max-width: 700px;
     margin: 0 auto;
 }
 
@@ -344,16 +301,7 @@ p {
     justify-content: center;
     font-family: 'Manrope', sans-serif;
     font-size: 1em;
-}
-
-/* Default aspect ratio for horizontal images */
-.image-placeholder:not(.vertical) {
-    aspect-ratio: 4 / 3;
-}
-
-/* Vertical aspect ratio */
-.image-placeholder.vertical {
-    aspect-ratio: 3 / 4;
+    aspect-ratio: 16 / 9;
 }
 
 .image-container img {
@@ -371,71 +319,27 @@ p {
     margin: 0;
     text-align: center;
 }
-
-/* Alternating image-text layout */
-.image-text-row {
+.image-gallery {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    align-items: center;
-    margin: 60px 0;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
 }
 
-/* Reverse layout for odd rows (text on left, image on right) */
-.image-text-row.reverse {
-    direction: rtl;
-}
-
-.image-text-row.reverse > * {
-    direction: ltr;
-}
-
-.image-text-content {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
-.image-text-content p {
-    font-family: 'Manrope', sans-serif;
-    font-size: 1.1em;
-    line-height: 1.8;
-    margin: 0;
-    color: #444;
-}
-
-.image-text-content strong {
-    font-size: 1.2em;
-    color: #333;
-}
-
-/* Flexible image container for both vertical and horizontal */
-.image-text-row .image-container {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.image-text-row .image-container img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
+.image-gallery .image-container {
+    aspect-ratio: 3 / 4;   /* taller */
+    overflow: hidden;
     border-radius: 8px;
-    max-height: 500px;
 }
 
-@media (max-width: 768px) {
-    .image-text-row,
-    .image-text-row.reverse {
-        grid-template-columns: 1fr;
-        gap: 30px;
-        direction: ltr;
-    }
-    
-    .image-text-row.reverse > * {
-        direction: ltr;
-    }
+.image-gallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
 
+/* Responsive Design */
+@media (max-width: 768px) {
     .case-study-content {
         padding: 0 24px;
     }
@@ -448,28 +352,18 @@ p {
         font-size: 1.5em;
     }
 
-    .case-study-section.two-column {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
     .case-study-section p,
     .case-study-meta p {
         font-size: 1em;
     }
 
-    .image-pair {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-
-    .image-triple {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-
     .image-single {
         max-width: 100%;
+    }
+
+    .image-gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
     }
 }
 
@@ -487,8 +381,17 @@ h2 {
 }
 
 .image-header img {
+    width: 40%;
     height: auto;
     display: block;
-    width: 300px;
-    height: 300px;
+    width: 200px;
+    height: 100px;
+}
+
+#gravity {
+    width: 600px;
+    height: 500px;
+    display: flex;
+    justify-content: center;  /* horizontal */
+    align-items: center;      /* vertical */
 }

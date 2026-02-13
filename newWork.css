@@ -7,12 +7,11 @@
 body {
     font-family: 'futura';
     text-transform: lowercase;
-    
     line-height: 1.6;
     background-color: #f8f4ec;
 }
 
-p{
+p {
     font-family: 'futura';
     text-transform: lowercase;
 }
@@ -43,9 +42,11 @@ p{
     background-position: center;
     margin-left: -80px;
 }
+
 .logo:hover {
     transform: rotate(15deg);
 }
+
 .nav-links {
     display: flex;
     list-style: none;
@@ -110,6 +111,7 @@ p{
     display: flex;
     align-items: center;
 }
+
 .footerbar .nav-container {
     width: 100%;
     max-width: 1200px;
@@ -120,6 +122,7 @@ p{
     height: 60px;
     position: relative;
 }
+
 .footerbar .logo {
     width: 50px;
     height: 50px;
@@ -129,6 +132,7 @@ p{
     transform: translateX(-50%);
     z-index: 2;
 }
+
 .footerbar .nav-links {
     display: flex;
     list-style: none;
@@ -137,6 +141,7 @@ p{
     justify-content: space-between;
     z-index: 1;
 }
+
 .footerbar .nav-links a {
     text-decoration: none;
     color: #333;
@@ -144,9 +149,11 @@ p{
     font-size: 16px;
     transition: color 0.3s ease;
 }
+
 .footerbar .nav-links a:hover {
     color: #666;
 }
+
 .footerbar .footer-chat {
     position: absolute;
     left: 30px;
@@ -155,6 +162,7 @@ p{
     font-family: 'futura';
     text-transform: lowercase;
 }
+
 .footerbar .footer-chat a {
     color: rgb(139, 50, 25);
     text-decoration: none;
@@ -164,10 +172,12 @@ p{
     text-transform: lowercase;
     font-size: 15px;
 }
+
 .footerbar .footer-chat a:hover {
     color: #666;
     text-decoration: underline;
 }
+
 .footerbar .footer-socials {
     position: absolute;
     right: 30px;
@@ -175,15 +185,18 @@ p{
     align-items: center;
     gap: 16px;
 }
+
 .footerbar .footer-icon {
     width: 28px;
     height: 28px;
     object-fit: contain;
     transition: filter 0.2s;
 }
+
 .footerbar .footer-icon:hover {
     filter: brightness(0.7);
 }
+
 .footerbar .footer-built {
     display: block;
     font-size: 12px;
@@ -194,42 +207,27 @@ p{
     letter-spacing: 0.2px;
 }
 
-/* Main content container for education page */
+/* Main content container */
 .work-content {
     max-width: 1000px;
     margin: 10px auto 10px auto;
     padding: 0 24px;
 }
 
-/* Projects 1 & 2: fixed layout (left narrow, right wide), not in main grid */
-.projects-grid-top {
-    display: grid;
-    grid-template-columns: 0.65fr 1.2fr;
-    grid-template-rows: 1fr;
-    gap: 28px 24px;
-    max-width: 1000px;
-    margin: 40px auto 0;
-    padding: 0 32px;
-    min-height: 320px;
-}
-
-/* Projects 3 & 4: project 3 wider than project 4 */
+/* Projects grid - all cards same size */
 .projects-grid {
     display: grid;
-    grid-template-columns: 1.25fr 0.7fr;
-    grid-template-rows: 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 28px 24px;
     max-width: 1000px;
-    margin: 28px auto 40px;
+    margin: 40px auto;
     padding: 0 32px;
-    min-height: 240px;
 }
 
-.project-cell,
 .project-card {
     display: flex;
     flex-direction: column;
-    min-height: 0;
+    min-height: 400px;
     text-decoration: none;
     color: inherit;
     cursor: pointer;
@@ -243,7 +241,7 @@ p{
     box-sizing: border-box;
     width: 100%;
     background-color: #e8e2d8;
-    border-radius: 12px;
+    border-radius: 8px;
     transition: background-color 0.25s ease, transform 0.2s ease;
 }
 
@@ -254,9 +252,9 @@ p{
     height: 100%;
     object-fit: cover;
     display: block;
+    border-radius: 8px;
 }
 
-.project-cell:hover .project-tile,
 .project-card:hover .project-tile {
     background-color: #ddd6ca;
     transform: scale(1.03);
@@ -288,16 +286,6 @@ p{
     color: #fff;
 }
 
-.tag-case-study {
-    background-color: rgba(151, 108, 77, 0.5);
-    color: #fff;
-}
-
-.tag-b2b {
-    background-color: #a8bec2;
-    color: #fff;
-}
-
 .tag-b2c {
     background-color: rgba(32, 44, 89, 0.5);
     color: #fff;
@@ -312,235 +300,14 @@ p{
     line-height: 1.35;
 }
 
-.project-cell:hover .project-caption,
 .project-card:hover .project-caption {
     color: #333;
 }
 
 @media (max-width: 768px) {
-    .projects-grid-top,
     .projects-grid {
         grid-template-columns: 1fr;
-        grid-template-rows: auto;
-        min-height: 0;
         gap: 32px;
         padding: 0 20px;
     }
-
-    .projects-grid-top {
-        margin-bottom: 0;
-    }
-
-    .projects-grid {
-        margin-top: 0;
-    }
-
-    .project-tile {
-        flex: none;
-        aspect-ratio: 3 / 4;
-    }
 }
-
-/* Flip card styles (legacy – unused) */
-.flip-card {
-    perspective: 1000px;
-    border-radius: 10px;
-    overflow: hidden;
-    margin: 30px auto;    
-    width: 100%;
-    max-width: 800px;
-    height: 400px;
-    cursor: pointer;
-}
-
-.flip-card-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
-}
-
-/* Hover to flip the card */
-.flip-card:hover .flip-card-inner {
-    transform: rotateY(180deg);
-}
-
-/* Position the front and back side */
-.flip-card-front, .flip-card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    padding: 20px;
-    box-sizing: border-box;
-}
-
-/* Style the front side */
-.flip-card-front {
-    color: black;
-    z-index: 2;
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-}
-
-/* Mockup container for images */
-.mockup {
-    width: 40%;
-    height: 100%;
-    border-radius: 8px;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.mockup img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* Text section */
-.text-section {
-    width: 60%;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-/* Style the back side */
-.flip-card-back {
-    background-color: #F4EEE1;
-    color: black;
-    transform: rotateY(180deg);
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-.back-content {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    max-width: 600px;
-}
-
-.back-content ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.back-content li {
-    margin: 10px 0;
-    padding-left: 20px;
-    position: relative;
-    font-size: 0.95em;
-    line-height: 1.5;
-}
-
-.back-content li:before {
-    content: "★";
-    position: absolute;
-    left: 0;
-    color: #694d43;
-}
-
-/* Tech stack bubbles container */
-.tech-stack {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
-    align-items: center; /* Also centers vertically if multiple rows */
-    padding: 15px 0;
-    border-top: 1px solid #332b22;
-}
-
-.tech-stack .bubble {
-    background-color: #f8f4ec;
-    border: 1px solid #333;  
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-size: 0.9em;
-    font-weight: 500;
-    transition: transform 0.2s;
-}
-
-
-.card {
-    display: flex;
-    max-width: 1000px;
-    margin: 2rem auto;
-    border-radius: 10px;
-    overflow: hidden;
-    height: 400px; /* smaller and more readable */
-  }
-  
-  /* Left Side */
-  .mockup {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.mockup img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensures image fills container while maintaining aspect ratio */
-    border-radius: 10px;
-}
-  
-  /* Right Side */
-  .text-section {
-    flex: 1;
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  
-  .labels {
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.85rem;
-    letter-spacing: 1px;
-    color: #666;
-    margin-bottom: 0.8rem;
-  }
-  
-  .title {
-    font-size: 1.8rem;
-    font-weight: 600;
-    margin-bottom: 0.6rem;
-}
-
-.title a {
-    color: inherit;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.title a:hover {
-    color: #666;
-    text-decoration: underline;
-}
-
-  .subtitle {
-    font-size: 1rem;
-    color: #444;
-    line-height: 1.5;
-  }
-  
-  .card:hover {
-    border: 1px solid #666; /* full shorthand keeps style */
-  }
-  

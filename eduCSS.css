@@ -4,16 +4,14 @@
     src: url(elements/FuturaHandwritten.ttf);
 }
 
-
 body {
     font-family: 'futura';
     text-transform: lowercase;
-    
     line-height: 1.6;
     background-color: #f8f4ec;
 }
 
-p{
+p {
     font-family: 'futura';
     text-transform: lowercase;
 }
@@ -44,9 +42,11 @@ p{
     background-position: center;
     margin-left: -80px;
 }
+
 .logo:hover {
     transform: rotate(15deg);
 }
+
 .nav-links {
     display: flex;
     list-style: none;
@@ -122,6 +122,7 @@ p{
     height: 60px;
     position: relative;
 }
+
 .footerbar .logo {
     width: 50px;
     height: 50px;
@@ -131,6 +132,7 @@ p{
     transform: translateX(-50%);
     z-index: 2;
 }
+
 .footerbar .nav-links {
     display: flex;
     list-style: none;
@@ -139,6 +141,7 @@ p{
     justify-content: space-between;
     z-index: 1;
 }
+
 .footerbar .nav-links a {
     text-decoration: none;
     color: #333;
@@ -146,9 +149,11 @@ p{
     font-size: 16px;
     transition: color 0.3s ease;
 }
+
 .footerbar .nav-links a:hover {
     color: #666;
 }
+
 .footerbar .footer-chat {
     position: absolute;
     left: 30px;
@@ -157,6 +162,7 @@ p{
     font-family: 'futura';
     text-transform: lowercase;
 }
+
 .footerbar .footer-chat a {
     color: rgb(139, 50, 25);
     text-decoration: none;
@@ -166,10 +172,12 @@ p{
     text-transform: lowercase;
     font-size: 15px;
 }
+
 .footerbar .footer-chat a:hover {
     color: #666;
     text-decoration: underline;
 }
+
 .footerbar .footer-socials {
     position: absolute;
     right: 30px;
@@ -177,15 +185,18 @@ p{
     align-items: center;
     gap: 16px;
 }
+
 .footerbar .footer-icon {
     width: 28px;
     height: 28px;
     object-fit: contain;
     transition: filter 0.2s;
 }
+
 .footerbar .footer-icon:hover {
     filter: brightness(0.7);
 }
+
 .footerbar .footer-built {
     display: block;
     font-size: 12px;
@@ -203,54 +214,83 @@ p{
     padding: 0 24px;
 }
 
-/* Three-column layout for education categories */
+/* Stacked rows for education categories */
 .edu-columns {
     display: flex;
-    gap: 20px;
-    margin: 32px auto 0 auto;
+    flex-direction: column;
+    gap: 100px;
+    margin: 60px auto 80px auto;
     max-width: 1000px;
     padding: 0 24px;
 }
+
 .edu-column {
-    flex: 1;
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 80px;
+    align-items: start;
     background: none;
-    padding: 0 12px;
-    min-width: 0;
+    padding: 0;
 }
-.edu-column h3 {
+
+/* Reverse layout for second row */
+.edu-column:nth-child(2) {
+    grid-template-columns: 1fr 380px;
+}
+
+.edu-column:nth-child(2) .edu-header-section {
+    order: 2;
+}
+
+.edu-column:nth-child(2) .edu-courses-list {
+    order: 1;
+}
+
+.edu-column h2 {
     font-family: 'futura', sans-serif;
-    font-size: 1.2em;
-    margin-bottom: 25px;
+    font-size: 2em;
+    margin: 0;
+    line-height: 1.3;
 }
-.edu-column p {
-    font-size: 1em;
-    color: #333;
+
+.edu-header-section {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+    text-align: center;
+    padding-top: 0;
 }
+
+.edu-courses-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 20px;
+}
+
 @media (max-width: 800px) {
-    .edu-columns {
-        flex-direction: column;
+    .edu-column,
+    .edu-column:nth-child(2) {
+        grid-template-columns: 1fr;
         gap: 20px;
     }
-    .edu-column {
-        padding: 0;
+    
+    .edu-column:nth-child(2) .edu-header-section,
+    .edu-column:nth-child(2) .edu-courses-list {
+        order: initial;
     }
 }
 
 .edu-section {
     margin-bottom: 18px;
 }
-.edu-subtitle {
-    font-family: 'futura';
-    text-transform: lowercase;
-    font-size: 1.1em;
-    font-weight: bold;
-    margin: 28px 0 12px 0;
-    color: #56423b;
-    display: block;
-}
+
 .edu-course {
-    margin-bottom: 4px;
+    margin-bottom: 10px;
+    line-height: 1.5;
 }
+
 .edu-course-title {
     font-family: 'futura';
     text-transform: lowercase;
@@ -259,6 +299,7 @@ p{
     margin-right: 8px;
     color: #222;
 }
+
 .edu-course-desc {
     font-family: 'futura';
     text-transform: lowercase;
@@ -268,17 +309,14 @@ p{
 }
 
 .column-logos {
-    height: 200px;
-    width: 200px;
+    height: 180px;
+    width: 180px;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-left: 20px;
-    margin-bottom: -25px;
-
-
+    margin: 0;
 }
 
 .column-logos:hover {
-    transform: scale(1.2) !important; 
+    transform: scale(1.1);
 }

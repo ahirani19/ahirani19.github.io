@@ -1,0 +1,495 @@
+@font-face {
+    font-family: 'futura';
+    text-transform: lowercase;
+    src: url(elements/FuturaHandwritten.ttf);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap');
+
+body {
+    font-family: 'Manrope', sans-serif;
+    line-height: 1.6;
+    background-color: #f8f4ec;
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    font-family: 'Manrope', sans-serif;
+}
+
+/* Navbar styles */
+.navbar {
+    background-color: #f8f4ec;
+    max-width: 1200px;
+    margin: 20px auto 0 auto;
+    z-index: 10;
+    position: relative;
+    font-family: 'futura';
+}
+
+.nav-container {
+    padding: 0 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    font-family: 'futura';
+}
+
+.logo {
+    width: 70px;
+    height: 70px;
+    background-image: url(images/logo.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-left: -80px;
+}
+
+.logo:hover {
+    transform: rotate(15deg);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 20px;
+    transition: all 0.3s ease;
+    padding: 1px 0;
+    position: relative;
+}
+
+.nav-links a:hover {
+    color: #666;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: #333;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .nav-container {
+        padding: 0 15px;
+    }
+    .nav-links {
+        gap: 40px;
+    }
+    .nav-links a {
+        font-size: 14px;
+    }
+}
+
+/* Footer styles */
+.footerbar {
+    background-color: #D5D7D5;
+    width: 100vw;
+    max-width: none;
+    margin: 60px 0 0 0;
+    padding: 0;
+    border-top: 1px solid #e0dcd2;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    display: flex;
+    align-items: center;
+}
+
+.footerbar .nav-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    position: relative;
+}
+
+.footerbar .logo {
+    width: 50px;
+    height: 50px;
+    margin: 0 40px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.footerbar .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 60vw;
+    width: 100%;
+    justify-content: space-between;
+    z-index: 1;
+}
+
+.footerbar .nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: normal;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.footerbar .nav-links a:hover {
+    color: #666;
+}
+
+.footerbar .footer-chat {
+    position: absolute;
+    left: 30px;
+    font-size: 18px;
+    color: #333;
+    font-family: 'futura';
+    text-transform: lowercase;
+}
+
+.footerbar .footer-chat a {
+    color: rgb(139, 50, 25);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+    font-family: 'futura';
+    text-transform: lowercase;
+    font-size: 15px;
+}
+
+.footerbar .footer-chat a:hover {
+    color: #666;
+    text-decoration: underline;
+}
+
+.footerbar .footer-socials {
+    position: absolute;
+    right: 30px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.footerbar .footer-icon {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    transition: filter 0.2s;
+}
+
+.footerbar .footer-icon:hover {
+    filter: brightness(0.7);
+}
+
+.footerbar .footer-built {
+    display: block;
+    font-size: 12px;
+    color: #888;
+    font-family: 'futura';
+    text-transform: lowercase;
+    margin-top: 2px;
+    letter-spacing: 0.2px;
+}
+
+/* Case Study Content */
+.case-study-content {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 40px;
+}
+
+.case-study-header {
+    margin-bottom: 40px;
+}
+
+.case-study-header h1 {
+    font-family: 'futura';
+    text-transform: lowercase;
+    font-size: 3em;
+    margin: 0 0 20px 0;
+    color: #333;
+}
+
+.case-study-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.case-study-meta p {
+    font-family: 'Manrope', sans-serif;
+    font-size: 1.1em;
+    margin: 0;
+    color: #555;
+}
+
+.miniheader {
+    font-family: 'futura';
+    text-transform: lowercase;
+    color: #333;
+}
+
+.case-study-section {
+    margin-bottom: 50px;
+}
+
+.case-study-section.two-column {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.case-study-section h2 {
+    font-family: 'futura';
+    text-transform: lowercase;
+    font-size: 1.8em;
+    margin: 0 0 20px 0;
+    color: #333;
+}
+
+.case-study-section.two-column h2 {
+    margin: 0;
+}
+
+.case-study-section .section-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.case-study-section p {
+    font-family: 'Manrope', sans-serif;
+    font-size: 1.1em;
+    line-height: 1.8;
+    margin-bottom: 16px;
+    color: #444;
+}
+
+.case-study-section p:last-child {
+    margin-bottom: 0;
+}
+
+/* Image Sections */
+.image-section {
+    margin: 60px 0;
+}
+
+.image-pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+/* Three column layout for vertical images */
+.image-triple {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.image-triple .image-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.image-triple .image-container img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+/* Single centered vertical image */
+.image-single {
+    display: flex;
+    justify-content: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.image-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.image-placeholder {
+    width: 100%;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Manrope', sans-serif;
+    font-size: 1em;
+}
+
+/* Default aspect ratio for horizontal images */
+.image-placeholder:not(.vertical) {
+    aspect-ratio: 4 / 3;
+}
+
+/* Vertical aspect ratio */
+.image-placeholder.vertical {
+    aspect-ratio: 3 / 4;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.image-caption {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.95em;
+    color: #666;
+    font-style: italic;
+    margin: 0;
+    text-align: center;
+}
+
+/* Alternating image-text layout */
+.image-text-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    margin: 60px 0;
+}
+
+/* Reverse layout for odd rows (text on left, image on right) */
+.image-text-row.reverse {
+    direction: rtl;
+}
+
+.image-text-row.reverse > * {
+    direction: ltr;
+}
+
+.image-text-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.image-text-content p {
+    font-family: 'Manrope', sans-serif;
+    font-size: 1.1em;
+    line-height: 1.8;
+    margin: 0;
+    color: #444;
+}
+
+.image-text-content strong {
+    font-size: 1.2em;
+    color: #333;
+}
+
+/* Flexible image container for both vertical and horizontal */
+.image-text-row .image-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.image-text-row .image-container img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+    max-height: 500px;
+}
+
+@media (max-width: 768px) {
+    .image-text-row,
+    .image-text-row.reverse {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        direction: ltr;
+    }
+    
+    .image-text-row.reverse > * {
+        direction: ltr;
+    }
+
+    .case-study-content {
+        padding: 0 24px;
+    }
+
+    .case-study-header h1 {
+        font-size: 2.2em;
+    }
+
+    .case-study-section h2 {
+        font-size: 1.5em;
+    }
+
+    .case-study-section.two-column {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .case-study-section p,
+    .case-study-meta p {
+        font-size: 1em;
+    }
+
+    .image-pair {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .image-triple {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .image-single {
+        max-width: 100%;
+    }
+}
+
+h2 {
+    font-family: 'futura';
+    text-transform: lowercase;
+    font-weight: 400;
+    margin: 0;
+}
+
+#returnlink {
+    font-family: 'futura';
+    text-transform: lowercase;
+    font-size: 2em;
+}
+
+.image-header img {
+    width: 40%;
+    height: auto;
+    display: block;
+    width: 300;
+    height: 300px;
+}

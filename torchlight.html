@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" type="image/png" href="logo.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Torchlight Case Study</title>
+    <link rel="stylesheet" href="torchlight.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html">
+                <img src="logo.png" alt="Aashi's star logo" class="logo">
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="edu.html">education</a></li>
+                <li><a href="newWork.html" class="active">projects</a></li>
+                <li><a href="about.html">about</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Case Study Content -->
+    <div class="case-study-content">
+        <!-- Image Header -->
+        <div class="image-header">
+            <img src="images/tlogo.png" alt="Torchlight logo" class="image-placeholder">
+        </div>
+
+        <!-- Header Section -->
+        <div class="case-study-header">
+            <div class="case-study-meta">
+                <h2><span class="miniheader">role:</span> UI/UX Designer, Frontend Engineer</h2>
+                <h2><span class="miniheader">type:</span> B2C, Dashboards</h2>
+            </div>
+        </div>
+
+        <!-- Introduction -->
+        <div class="case-study-section">
+            <p>Torchlight is a web-based data visualization tool made to help people debug machine learning models. It
+                displays metrics, graphs, and allows you to step through your model to see how these facets adjust in
+                real time.</p>
+        </div>
+
+        <!-- Problem Statement -->
+        <div class="case-study-section">
+            <h2>problem:</h2>
+            <p>Machine learning models are incredibly information dense. For our intended users of the platform, namely
+                students, information needs to be displayed in such a way that the dynamic visuals are easy to read and
+                understand, especially since pinpointing the exact reason for something like overfitting, unexpected
+                results, etc. becomes hidden behind the numerous variables.</p>
+        </div>
+
+        <!-- Problem Details -->
+        <div class="case-study-section">
+            <p><strong>1. Many moving parts:</strong> There are a variable number of layers, each with their own
+                weights,
+                biases, and other overhead like kernels, batch size, etc. Tracking every single one of these variables
+                becomes a nightmare, especially without any visual aides.</p>
+
+            <p><strong>2. Abstract concepts:</strong> For students who've never seen or tested a model before, the gap
+                between the mathematical basis and real world application of the model becomes a barrier. Take the idea
+                of a "layer" on a model - what exactly is it? What does it look like, how does it help a model's
+                evolution? Having a more concrete idea of things like layers help make machine learning more intuitive,
+                and debugging less like guesswork.</p>
+
+            <p><strong>3. Disconnected metrics:</strong> Model layers feed into each other, acting as both input and
+                output
+                in a continuous flow. Providing one set of output metrics rather than specific metrics at each milestone
+                the model isolates the model and hides the truth of machine learning models, which is that they are a
+                very dynamic and evolving process. More importantly, when unexpected things happen during model testing,
+                it becomes immensely difficult to pinpoint where exactly certain variables begin to change, impact
+                results, or otherwise improve or degrade performance.</p>
+        </div>
+
+        <!-- Goals -->
+        <div class="case-study-section">
+            <h2>our goals:</h2>
+            <p>1. Decrease cognitive load by providing a modular way to view different information about the model.</p>
+            <p>2. Enable debugging akin to a debugger in a code IDE, a useful existing tool, to help students see
+                incremental updates in their models.</p>
+            <p>3. Create a concrete visual representation of abstract objects such as layers and kernels.</p>
+        </div>
+
+        <!-- Exploration Section -->
+        <div class="case-study-section">
+            <h2>exploration: figma dashboard</h2>
+            <p>I took to Figma to create a detailed dashboard that accomplished the above goals as best as possible.
+                Being both the only UI designer on the team while also being a programmer gave me a unique perspective
+                on the problem; I understood firsthand which parts of machine learning felt so cryptic and difficult, so
+                I kept those first-timer challenges in mind while designing the initial dashboard for this 24-hour
+                sprint.</p>
+            <p>I followed the convention of a zoned dashboard with three main zones, organizing controls, visualization,
+                and metrics.</p>
+        </div>
+
+        <!-- Single Vertical Image Section -->
+        <div class="image-section">
+            <div class="image-single">
+                <div class="image-container">
+                    <img src="Torchlight/figma_version_dashboard.jpg">
+                    <p class="image-caption">caption for dashboard overview</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Control Panel -->
+        <div class="case-study-section">
+            <h2>from left to right:</h2>
+
+            <!-- Three Vertical Images Section -->
+            <div class="image-section">
+                <div class="image-triple">
+                    <div class="image-container">
+                        <img src="Torchlight/final_dashboard 1.png">
+                        <p class="image-caption">control panel</p>
+                    </div>
+                    <div class="image-container">
+                        <img src="Torchlight/final_dashboard_sandbox.png">
+                        <p class="image-caption">sandbox zone</p>
+                    </div>
+                    <div class="image-container">
+                        <img src="Torchlight/final_dashboard 3.png">
+                        <p class="image-caption">metrics dashboard</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <p><strong>Control panel:</strong></p>
+            <p>A Version Control panel, allowing you to save numerous versions of a model with different parameters.
+                This allows students to go back to and compare different models with ease. Users can label and color
+                code them for easy recognition.</p>
+            <p>An Active Data panel lays out the visual structure of imported data sets. This helps error prevention,
+                allowing users to see what data is being trained on and actively referenced.</p>
+            <p>You can also change the color scheme at the bottom per user preference.</p>
+        </div>
+
+        <!-- Sandbox Zone -->
+        <div class="case-study-section">
+            <p><strong>Sandbox zone:</strong></p>
+            <p>In this clickable section, users can see layers, weights, biases, and other layer-specific information
+                appear as they step through. This mock flow diagram shows just an initial layer, a multiplication layer,
+                and an optimization algorithm being applied.</p>
+            <p>The user can drag and zoom as they please with the provided control panel.</p>
+            <p>We've directly addressed the need for a concrete visualization of layers with this panel; by making
+                layers movable and labeled, we hope that users can more clearly understand what a layer consists of and
+                how each part of the model feeds into the next.</p>
+        </div>
+
+        <!-- Metric Dashboard -->
+        <div class="case-study-section">
+            <p><strong>Metric dashboard:</strong></p>
+            <p>This is the section for model behavior and performance. Where the sandbox provides layer specific
+                information, this section allows you to see the dynamic variables over time.</p>
+            <p>The most pertinent metrics, the computation time, input and output shape are at the very top, with a
+                "Node" (Layer) debugger below it. It's equipped with a slider allowing users to scrub through epochs and
+                a bar chart of the evolving weights and biases, addressing the problem of disconnected metrics; the
+                panel connects layer structure to dynamic behavior of the model.</p>
+            <p>For convolutional (image-based) neural networks in particular, we provided a carousel view of the
+                different matrices. In the mockup, the current layer of radiology images are highlighted with the before
+                & after layers on either side, allowing the user to see the smooth flow of change between the
+                convolutional layers.</p>
+            <p>Below it comes more metric graphs for things such as backpropagation with epochs, and gradients, making
+                unexpected behavior easy to identify.</p>
+        </div>
+
+
+        <!-- Visual Design -->
+        <div class="case-study-section">
+            <h2>visual design</h2>
+            <p>A dark-mode UI was chosen as the default, following the convention of most IDEs; a dark background with
+                colorful data nodes are visually easier to see and helps the different panels stand out.</p>
+            <p>The default color scheme of purples, blues, and greens maintains cohesion while allowing warmer tones
+                (like the green "Initialized" indicator or yellow highlights) to draw attention.</p>
+            <p>For typography, I chose Homenaje for its readability and how it complements the data-heavy visuals while
+                providing a modern feel.</p>
+        </div>
+
+        <!-- Implementation Section -->
+        <div class="case-study-section">
+            <h2>implementation: scoping for a 24-hour sprint and object-oriented programming</h2>
+            <p>As both the UI designer and frontend developer for this project, I had to turn my design decisions into
+                engineering decisions all 24 hours. Our backend engineers transformed PyTorch tensors into object
+                classes (Python based OOP). This made it easy to access and visualize certain variables. They created
+                two custom classes; Node class objects holding layer information, and Edge class objects holding the
+                connections to other layers.</p>
+            <p>To create our dashboard, I translated these OOP objects into interactive React components.</p>
+        </div>
+        <!-- Version Control Implementation - Row 1 (Image left, Text right) -->
+        <div class="image-text-row">
+            <div class="image-container">
+                <img src="Torchlight/implemented_version.png">
+                <p class="image-caption">version control panel</p>
+            </div>
+            <div class="image-text-content">
+                <p><strong>Version control:</strong></p>
+                <p>This feature remained largely unchanged due to its significance; comparing models is key to
+                    understanding how different configurations impacted results.</p>
+            </div>
+        </div>
+
+        <!-- Layer Visualizer Implementation - Row 2 (Text left, Image right) -->
+        <div class="image-text-row reverse">
+            <div class="image-container">
+                <img src="Torchlight/implemented_sandbox.png">
+                <p class="image-caption">layer visualizer with node connections</p>
+            </div>
+            <div class="image-text-content">
+                <p><strong>Layer visualizer:</strong></p>
+                <p>For the sandbox feature, I used React (JavaScript) as well as regular web technologies (HTML/CSS) to
+                    create the visuals. I mapped Node objects to square layers containing text of all its attributes,
+                    and had the Edge objects connect each layer visually via dotted-line flow animations, making the
+                    connections clear.</p>
+            </div>
+        </div>
+
+        <!-- Metrics Dashboard Implementation - Row 3 (Image left, Text right) -->
+        <div class="image-text-row">
+            <div class="image-container">
+                <img src="Torchlight/implemented_metrics.png">
+                <p class="image-caption">metrics dashboard with interactive graphs</p>
+            </div>
+            <div class="image-text-content">
+                <p><strong>Metrics Dashboard:</strong></p>
+                <p>We kept the core three (time, input and output) at the top, with an abundance of graphs now taking up
+                    the panel. Variables shown in the graphs were easy to extract from the objects, hence the many
+                    interactive graphs featuring weights, biases, epochs etc.</p>
+            </div>
+        </div>
+
+        <!-- Kernel Carousel Implementation - Row 4 (Text left, Image right) -->
+        <div class="image-text-row reverse">
+            <div class="image-container">
+                <img src="Torchlight/implemented_kernel.png">
+                <p class="image-caption">kernel carousel for CNN visualization</p>
+            </div>
+            <div class="image-text-content">
+                <p><strong>Kernel Carousel:</strong></p>
+                <p>We also determined that the kernel carousel for CNN models was essential to aid visualization of each
+                    layer. Color blocks stood in place of images for sheer size and clarity constraints.</p>
+            </div>
+        </div>
+
+        <!-- Implementation Improvements -->
+        <div class="case-study-section">
+            <h2>implementation improvements</h2>
+            <p><strong>Hover statistics:</strong> I added pop-up panels to graphs when a user hovered above a bar; they
+                proved useful for quick comparisons and statistics.</p>
+            <p><strong>Animated data flow:</strong> A dotted line flow animation using CSS brought the abstract
+                'feeding' of variables into layers to fruition; the movement helps understanding of tensors moving
+                through the model.</p>
+        </div>
+
+        <!-- Strategic Cuts -->
+        <div class="case-study-section">
+            <h2>strategic cuts:</h2>
+            <p>The Active Data panel would have unnecessarily cluttered the clean UI, and variable comparison graphs (as
+                shown in the Figma dashboard) would have defeated the purpose of making the machine learning model more
+                modular and easy to debug.</p>
+        </div>
+
+        <!-- Final UI -->
+        <div class="case-study-section">
+            <h2>final ui</h2>
+        </div>
+
+        <!-- Single Vertical Image Section -->
+        <div class="image-section">
+            <div class="image-single">
+                <div class="image-container">
+                    <img src="Torchlight/implemented_dashboard_nonhd.jpg">
+                </div>
+            </div>
+        </div>
+
+        <a id="returnlink" href="newWork.html"> ← return to projects</a>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="footerbar">
+        <div class="nav-container">
+            <span class="footer-chat">Let's chat: <a href="mailto:ahirani@umich.edu">ahirani@umich.edu</a>
+                <br>
+                <span class="footer-built">Built with lots of indie rock and iced lattes</span>
+            </span>
+            <img src="logo.png" alt="Aashi's star logo" class="logo">
+            <div class="footer-socials">
+                <a href="https://www.linkedin.com/in/aashi-hirani/" target="_blank"><img src="images/linkedin.png"
+                        alt="LinkedIn" class="footer-icon"></a>
+                <a href="https://github.com/ahirani19" target="_blank"><img src="images/github.png" alt="GitHub"
+                        class="footer-icon"></a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

@@ -370,3 +370,17 @@ h2 {
     font-weight: 400;  /* removes bold */
     margin: 0;
 }
+
+#returnlink{
+    font-family: 'futura';
+    text-transform: lowercase;
+    font-size: 2em;
+}
+
+.image-header img {
+    width: 40%;     /* scales with container */
+    height: auto;
+    display: block;
+    width: 200px;
+    height: 100px;
+}

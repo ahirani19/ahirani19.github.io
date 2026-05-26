@@ -318,6 +318,13 @@
     });
 
     layer.addEventListener("click", function (event) {
+      if (event.target.closest(".js-return-top")) {
+        contentEl.scrollTo({
+          top: 0,
+          behavior: prefersReducedMotion ? "auto" : "smooth",
+        });
+        return;
+      }
       if (event.target.closest(".js-page-back")) {
         closePage();
       }

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aashi Hirani</title>
+    <link rel="icon" type="image/svg+xml" href="assets/aashi_logo.svg" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preload" as="image" href="landing_page/Name.gif" />
+    <link rel="preload" as="image" href="landing_page/landing.png" />
+  </head>
+  <body class="landing-body">
+    <main class="landing">
+      <header class="landing__header">
+        <a class="landing__brand" href="index.html" aria-label="Home">
+          <img
+            class="landing__brand-mark"
+            src="assets/aashi_logo.svg"
+            alt=""
+            decoding="async"
+          />
+        </a>
+        <nav class="landing__nav nav-pills" aria-label="Primary">
+          <a class="pill pill--ghost" href="about.html">About Me</a>
+          <a class="pill pill--ghost" href="home.html#work">Work</a>
+          <a
+            class="nav-icon-link"
+            href="https://www.linkedin.com/in/aashi-hirani/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn (opens in a new tab)"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                fill="currentColor"
+                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+              />
+            </svg>
+          </a>
+          <a
+            class="nav-icon-link"
+            href="mailto:ahirani@umich.edu"
+            aria-label="Email"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                fill="currentColor"
+                d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5L4 8V6l8 5 8-5v2z"
+              />
+            </svg>
+          </a>
+        </nav>
+      </header>
+
+      <h1 class="visually-hidden">Aashi Hirani — coder &amp; designer</h1>
+
+      <a
+        class="landing__nametag"
+        href="home.html"
+        aria-label="Enter portfolio"
+      >
+        <img
+          class="landing__nametag-image"
+          src="landing_page/Name.gif"
+          alt="Hello, my name is Aashi"
+          decoding="async"
+        />
+        <p class="landing__tagline">I&rsquo;m a <span class="js-scramble" data-final="designer">designer</span> who <span class="js-scramble" data-final="codes">codes</span> from NYC</p>
+      </a>
+    </main>
+
+    <script>
+      (function () {
+        var els = document.querySelectorAll(".js-scramble");
+        if (!els.length) return;
+
+        var chars = "abcdefghijklmnopqrstuvwxyz";
+        function randomChar() {
+          return chars.charAt(Math.floor(Math.random() * chars.length));
+        }
+
+        var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        if (reduced) {
+          els.forEach(function (el) {
+            el.classList.add("is-ready");
+          });
+          return;
+        }
+
+        els.forEach(function (el) {
+          var finalText = el.getAttribute("data-final") || el.textContent;
+          el.setAttribute("data-final", finalText);
+          var scrambled = "";
+          for (var i = 0; i < finalText.length; i++) {
+            scrambled += randomChar();
+          }
+          el.textContent = scrambled;
+          el.classList.add("is-ready");
+        });
+
+        function animate(el) {
+          var finalText = el.getAttribute("data-final");
+          var totalDuration = 1400;
+          var scrambleInterval = 110;
+          var landTimes = [];
+          var currentChars = [];
+          for (var i = 0; i < finalText.length; i++) {
+            landTimes.push(
+              Math.random() * totalDuration * 0.55 +
+                (i / finalText.length) * totalDuration * 0.45
+            );
+            currentChars.push(randomChar());
+          }
+
+          var start = performance.now();
+          var lastReroll = start;
+          function frame(now) {
+            var elapsed = now - start;
+            var shouldReroll = now - lastReroll >= scrambleInterval;
+            if (shouldReroll) lastReroll = now;
+
+            var output = "";
+            var done = true;
+            for (var i = 0; i < finalText.length; i++) {
+              if (elapsed >= landTimes[i]) {
+                output += finalText.charAt(i);
+              } else {
+                done = false;
+                if (shouldReroll) currentChars[i] = randomChar();
+                output += currentChars[i];
+              }
+            }
+            el.textContent = output;
+            if (!done) {
+              requestAnimationFrame(frame);
+            } else {
+              el.textContent = finalText;
+            }
+          }
+          requestAnimationFrame(frame);
+        }
+
+        setTimeout(function () {
+          els.forEach(animate);
+        }, 280);
+      })();
+    </script>
+  </body>
+</html>

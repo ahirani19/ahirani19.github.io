@@ -3,15 +3,152 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About Me</title>
+    <title> About </title>
     <link rel="icon" type="image/svg+xml" href="assets/aashi_logo.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body class="placeholder-page">
-    <main class="placeholder-page__main" aria-label="About me">
-      <!-- About content goes here -->
+  <body class="about-page">
+    <header class="site-header">
+      <nav class="nav-pills" aria-label="Primary">
+        <a class="pill pill--ghost" href="about.html">About Me</a>
+        <a class="pill pill--ghost" href="home.html#work">Work</a>
+        <a
+          class="nav-icon-link"
+          href="https://www.linkedin.com/in/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn (opens in a new tab)"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              fill="currentColor"
+              d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+            />
+          </svg>
+        </a>
+        <a
+          class="nav-icon-link"
+          href="mailto:you@example.com"
+          aria-label="Email"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              fill="currentColor"
+              d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5L4 8V6l8 5 8-5v2z"
+            />
+          </svg>
+        </a>
+      </nav>
+    </header>
+
+    <main class="about-page__main" aria-label="About me">
+      <div class="about__banner" role="status">
+        <span class="about__banner-tag">Heads up</span>
+        <span class="about__banner-text">Under construction &mdash; check back soon.</span>
+      </div>
+
+      <header class="about__intro">
+        <h1 class="about__title">About Me</h1>
+        <p class="about__lede">A quick map on some stuff you may have saw earlier...</p>
+        <p class="about__lede">
+          If you paid attention to some of the objects on my landing page,
+          here&rsquo;s where you can learn a bit more about why they&rsquo;re there!
+        </p>
+      </header>
+
+      <section class="about__objects" aria-label="Landing page objects">
+        <article class="about-object">
+          <h2 class="about-object__title">metrocard</h2>
+          <p class="about-object__body">
+            i am a new york city native (and therefore iron-clad with bagels and metrocards).
+            i also take pride that spiderman is from my hometown (forest hills, queens).
+          </p>
+        </article>
+
+        <article class="about-object">
+          <h2 class="about-object__title">bookshelf</h2>
+          <p class="about-object__body">
+            slight offshoot, but i love all kinds of art and media, from graffiti
+            to books to music. my favorite pieces in no particular order are
+            <em>the bear</em> (tv show), <em>almond</em> by won-pyung sohn (book),
+            and <em>the amazing spiderman 2</em> (movie).
+          </p>
+        </article>
+
+        <article class="about-object">
+          <h2 class="about-object__title">red backpack</h2>
+          <p class="about-object__body">
+            i am a huge nature person. i like to run and lift on a regular basis,
+            but prefer kayaking, hiking, mountain biking and swimming (and that
+            red backpack is indeed my real life hiking bag).
+          </p>
+        </article>
+
+        <article class="about-object">
+          <h2 class="about-object__title">ipad &amp; pencil</h2>
+          <p class="about-object__body">
+            my love of design largely comes from my love of visual art and animation.
+            i pursued fine arts in high school as a hobby, and still draw to this day.
+          </p>
+          <p class="about-object__body about-object__body--note">
+            fun fact: every graphic on this page was drawn and animated by me!
+          </p>
+        </article>
+
+        <article class="about-object">
+          <h2 class="about-object__title">arduino</h2>
+          <p class="about-object__body">
+            robots and robotics have to be some of the coolest things to me, and
+            i like to build and mess around with arduinos from time to time.
+            i also love keeping myself up-to-date on robotics news and hope to
+            work with some at a future job.
+          </p>
+        </article>
+
+        <article class="about-object">
+          <h2 class="about-object__title">assorted coffee cups</h2>
+          <p class="about-object__body">
+            there&rsquo;s a 90% chance you will find me with a coffee in my hand
+            at any given time, and a 99% chance that the coffee i&rsquo;m drinking
+            is a latte.
+          </p>
+        </article>
+      </section>
     </main>
-    <a href="index.html" class="placeholder-page__back js-card-transition-back">← Home</a>
-    <script src="card-transition.js"></script>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <p class="site-footer__tagline">
+          built with lots of indie rock and iced lattes
+        </p>
+        <a
+          class="site-footer__brand"
+          href="index.html"
+          aria-label="Home"
+        >
+          <img
+            class="site-footer__brand-mark"
+            src="assets/aashi_logo.svg"
+            alt=""
+            decoding="async"
+          />
+        </a>
+        <div class="site-footer__contacts" aria-label="Contact">
+          <a
+            class="site-footer__link"
+            href="https://www.linkedin.com/in/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >LinkedIn</a>
+          <a class="site-footer__link" href="mailto:you@example.com">Email</a>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

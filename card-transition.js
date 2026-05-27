@@ -246,7 +246,11 @@
   function closePage() {
     if (isAnimating || !activeView) return;
 
-    if (!closingFromHistory && location.hash) {
+    if (
+      !closingFromHistory &&
+      history.state &&
+      history.state.view === activeView
+    ) {
       history.back();
       return;
     }
@@ -276,12 +280,13 @@
     originRect = null;
     originRadius = "";
     isAnimating = false;
-    closingFromHistory = false;
     document.title = "Portfolio — Home";
 
     if (!closingFromHistory && history.replaceState) {
       history.replaceState(null, "", window.location.pathname);
     }
+
+    closingFromHistory = false;
   }
 
   function isModifiedClick(event) {
@@ -331,12 +336,15 @@
     });
 
     window.addEventListener("popstate", function () {
-      if (activeView && !location.hash) {
-        closingFromHistory = true;
-        if (isAnimating) return;
-        isAnimating = true;
-        runCloseAnimation();
-        return;
+      if (activeView) {
+        var currentState = history.state;
+        if (!currentState || currentState.view !== activeView) {
+          closingFromHistory = true;
+          if (isAnimating) return;
+          isAnimating = true;
+          runCloseAnimation();
+          return;
+        }
       }
 
       if (!activeView && location.hash) {

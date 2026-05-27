@@ -2242,24 +2242,55 @@ button.project-case__chapter:focus-visible {
   border-radius: 4px;
 }
 
-.philosophy-pillars {
-  list-style: none;
-  margin: clamp(1.25rem, 3vh, 2rem) 0 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: clamp(0.9rem, 2vh, 1.4rem);
-  counter-reset: pillar;
+.project-case--philosophy {
+  grid-template-columns: minmax(0, 1fr);
+  max-width: 44rem;
 }
 
-.philosophy-pillar {
+.project-case--philosophy .project-case__main {
+  grid-column: 1 / -1;
+}
+
+.philosophy-drawers {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.75rem, 1.8vh, 1.1rem);
+  margin: clamp(1.25rem, 3vh, 2rem) 0 0;
+}
+
+.philosophy-drawer {
+  border-radius: 14px;
+  border: 1px solid color-mix(in srgb, var(--text-dark) 8%, transparent);
+  background: color-mix(in srgb, var(--text-dark) 5%, transparent);
+  overflow: hidden;
+}
+
+.philosophy-drawer__trigger {
   display: flex;
   align-items: flex-start;
   gap: clamp(0.85rem, 1.6vw, 1.25rem);
   padding: clamp(0.85rem, 1.8vh, 1.1rem) clamp(1rem, 2vw, 1.35rem);
-  background: color-mix(in srgb, var(--text-dark) 5%, transparent);
-  border-radius: 14px;
-  border: 1px solid color-mix(in srgb, var(--text-dark) 8%, transparent);
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.philosophy-drawer__trigger::-webkit-details-marker {
+  display: none;
+}
+
+.philosophy-drawer__trigger::marker {
+  content: "";
+}
+
+.philosophy-drawer__trigger:hover {
+  background: color-mix(in srgb, var(--text-dark) 3%, transparent);
+}
+
+.philosophy-drawer__trigger:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--text-dark) 35%, transparent);
+  outline-offset: -2px;
 }
 
 .philosophy-pillar__num {
@@ -2279,15 +2310,67 @@ button.project-case__chapter:focus-visible {
 }
 
 .philosophy-pillar__text {
+  flex: 1;
+  min-width: 0;
   font-family: var(--font-body);
   font-size: clamp(1rem, 1vw + 0.85rem, 1.2rem);
   line-height: 1.4;
   color: var(--text-dark);
   padding-top: 0.15rem;
+  text-align: left;
 }
 
-.philosophy-panel[hidden] {
-  display: none;
+.philosophy-drawer__icon {
+  flex: 0 0 auto;
+  width: 1.35rem;
+  height: 1.35rem;
+  margin-top: 0.2rem;
+  position: relative;
+  opacity: 0.55;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.philosophy-drawer__icon::before,
+.philosophy-drawer__icon::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0.65rem;
+  height: 2px;
+  background: currentColor;
+  transform: translate(-50%, -50%);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.philosophy-drawer__icon::after {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.philosophy-drawer[open] .philosophy-drawer__icon::after {
+  transform: translate(-50%, -50%) rotate(90deg) scaleX(0);
+  opacity: 0;
+}
+
+.philosophy-drawer[open] {
+  border-color: color-mix(in srgb, var(--text-dark) 14%, transparent);
+}
+
+.philosophy-drawer__body {
+  padding: 0 clamp(1rem, 2vw, 1.35rem) clamp(1rem, 2.2vh, 1.35rem);
+  padding-left: calc(
+    clamp(1rem, 2vw, 1.35rem) + clamp(1.85rem, 3.4vw, 2.35rem) +
+      clamp(0.85rem, 1.6vw, 1.25rem)
+  );
+  border-top: 1px solid color-mix(in srgb, var(--text-dark) 8%, transparent);
+}
+
+.philosophy-drawer__body p {
+  margin: clamp(0.85rem, 1.8vh, 1rem) 0 0;
+  font-family: var(--font-body);
+  font-size: clamp(0.95rem, 0.8vw + 0.8rem, 1.05rem);
+  line-height: 1.55;
+  color: color-mix(in srgb, var(--text-dark) 72%, transparent);
 }
 
 .project-case__main {
@@ -2474,6 +2557,13 @@ button.project-case__chapter:focus-visible {
   min-width: 0;
 }
 
+.project-case__figure-stack--faq {
+  margin: clamp(1rem, 3vh, 1.75rem) 0 clamp(1.5rem, 4vh, 2.25rem);
+  max-width: min(100%, 40rem);
+  margin-inline: auto;
+  gap: clamp(1.25rem, 2.5vh, 2rem);
+}
+
 .project-case__figure--small {
   width: 78%;
   max-width: 100%;
@@ -2486,6 +2576,278 @@ button.project-case__chapter:focus-visible {
   line-height: 1.5;
   color: color-mix(in srgb, var(--text-dark) 58%, transparent);
   font-style: italic;
+}
+
+/* Julie: images at natural size — no bordered card boxes */
+.project-case--julie .project-case__figure-image {
+  border: none;
+  background: none;
+  border-radius: 0;
+}
+
+.project-case--julie .project-case__figure-image--match {
+  aspect-ratio: auto;
+  object-fit: unset;
+  height: auto;
+}
+
+/* Case study image carousel */
+.case-carousel {
+  margin: clamp(1rem, 3vh, 1.75rem) 0 clamp(1.5rem, 4vh, 2.25rem);
+  max-width: min(100%, 44rem);
+  margin-inline: auto;
+}
+
+.case-carousel:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--text-dark) 35%, transparent);
+  outline-offset: 6px;
+  border-radius: 8px;
+}
+
+.case-carousel__controls {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: clamp(0.5rem, 1.5vw, 1rem);
+}
+
+.case-carousel__viewport {
+  overflow: hidden;
+  min-width: 0;
+  border-radius: clamp(10px, 1.4vw, 14px);
+}
+
+.case-carousel__track {
+  display: flex;
+  will-change: transform;
+}
+
+.case-carousel__slide {
+  flex: 0 0 100%;
+  margin: 0;
+  min-width: 0;
+}
+
+.case-carousel__image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.case-carousel__placeholder {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  background: color-mix(in srgb, var(--text-dark) 5%, var(--surface-muted));
+  border: 1px solid color-mix(in srgb, var(--text-dark) 8%, transparent);
+  border-radius: clamp(10px, 1.4vw, 14px);
+}
+
+.case-carousel__placeholder[hidden],
+.case-carousel__image[hidden] {
+  display: none;
+}
+
+.case-carousel__btn {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(2.25rem, 5vw, 2.75rem);
+  height: clamp(2.25rem, 5vw, 2.75rem);
+  padding: 0;
+  border: 1px solid color-mix(in srgb, var(--text-dark) 14%, transparent);
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--bg-cream) 70%, transparent);
+  color: var(--text-dark);
+  font-family: var(--font-body);
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  line-height: 1;
+  cursor: pointer;
+  appearance: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.case-carousel__btn:hover {
+  background: color-mix(in srgb, var(--bg-cream) 90%, transparent);
+  transform: scale(1.04);
+}
+
+.case-carousel__btn:active {
+  transform: scale(0.97);
+}
+
+.case-carousel__btn:focus-visible {
+  outline: 2px solid var(--text-dark);
+  outline-offset: 2px;
+}
+
+.case-carousel__caption {
+  margin: clamp(0.75rem, 1.8vh, 1rem) 0 clamp(0.65rem, 1.4vh, 0.85rem);
+  font-family: var(--font-body);
+  font-size: clamp(0.75rem, 0.65rem + 0.4vw, 0.875rem);
+  line-height: 1.5;
+  color: color-mix(in srgb, var(--text-dark) 58%, transparent);
+  font-style: italic;
+  text-align: center;
+}
+
+.case-carousel__dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: clamp(0.4rem, 1vw, 0.55rem);
+}
+
+.case-carousel__dot {
+  width: clamp(0.45rem, 1vw, 0.55rem);
+  height: clamp(0.45rem, 1vw, 0.55rem);
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--text-dark) 22%, transparent);
+  cursor: pointer;
+  appearance: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.case-carousel__dot:hover {
+  background: color-mix(in srgb, var(--text-dark) 40%, transparent);
+}
+
+.case-carousel__dot.is-active,
+.case-carousel__dot[aria-selected="true"] {
+  background: var(--text-dark);
+  transform: scale(1.15);
+}
+
+.case-carousel__dot:focus-visible {
+  outline: 2px solid var(--text-dark);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .case-carousel__track {
+    transition: none !important;
+  }
+
+  .case-carousel__btn,
+  .case-carousel__dot {
+    transition: none;
+  }
+}
+
+.project-case__figure-compare {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 1px minmax(0, 1fr);
+  gap: clamp(1rem, 2.2vw, 1.5rem);
+  align-items: start;
+  margin: clamp(1rem, 3vh, 1.75rem) 0 clamp(1.5rem, 4vh, 2.25rem);
+}
+
+.project-case__figure-compare__divider {
+  width: 1px;
+  min-height: 100%;
+  align-self: stretch;
+  background: color-mix(in srgb, var(--text-dark) 16%, transparent);
+}
+
+.project-case__figure-compare__after {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.75rem, 1.4vw, 1.25rem);
+  min-width: 0;
+}
+
+.project-case__figure-compare__after .project-case__figure {
+  width: 100%;
+}
+
+.project-case__figure-compare__after .project-case__figure-image {
+  width: 100%;
+  height: auto;
+}
+
+/* Medical credibility: full lo-fi left, contributors + cropped Tessa right */
+.project-case__figure-compare--medical {
+  align-items: stretch;
+}
+
+.project-case__figure-compare--medical .project-case__figure-compare__before,
+.project-case__figure-compare--medical .project-case__figure-compare__after {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+  height: 100%;
+}
+
+.project-case__figure-compare--medical .project-case__figure-compare__before.project-case__figure {
+  margin: 0;
+}
+
+.project-case__figure-compare--medical .project-case__figure-compare__before .project-case__figure-image {
+  flex: 0 0 auto;
+  width: 100%;
+  height: auto;
+  object-fit: unset;
+}
+
+.project-case__figure-compare--medical .project-case__figure-compare__before .project-case__figure-caption {
+  flex: 0 0 auto;
+}
+
+.project-case__figure-compare--medical .project-case__figure-compare__before::after {
+  content: "";
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+.project-case__figure-compare--medical .project-case__figure--contributors .project-case__figure-image {
+  width: 100%;
+  height: auto;
+  flex: 0 0 auto;
+}
+
+.project-case__figure-compare--medical .project-case__figure--tessa {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-case__figure-compare--medical .project-case__figure--tessa .project-case__figure-image {
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+@media (max-width: 639.98px) {
+  .project-case__figure-compare {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1px auto;
+  }
+
+  .project-case__figure-compare__divider {
+    width: 100%;
+    height: 1px;
+    min-height: 0;
+  }
+
+  .project-case__figure-compare--medical .project-case__figure-compare__before::after {
+    display: none;
+  }
+
+  .project-case__figure-compare--medical .project-case__figure--tessa .project-case__figure-image {
+    flex: none;
+    height: auto;
+    object-fit: unset;
+  }
 }
 
 @media (max-width: 639.98px) {
@@ -2551,6 +2913,15 @@ button.project-case__chapter:focus-visible {
   margin: 0;
 }
 
+.explorations__note {
+  font-family: var(--font-body);
+  font-size: clamp(0.85rem, 0.8vw + 0.65rem, 1rem);
+  line-height: 1.45;
+  color: color-mix(in srgb, var(--text-dark) 52%, transparent);
+  margin: 0;
+  font-style: italic;
+}
+
 .explorations__section {
   display: flex;
   flex-direction: column;
@@ -2568,14 +2939,8 @@ button.project-case__chapter:focus-visible {
 
 .explorations__grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: clamp(1rem, 2vw, 1.75rem);
-}
-
-@media (max-width: 899.98px) {
-  .explorations__grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
 }
 
 @media (max-width: 599.98px) {
@@ -2591,14 +2956,6 @@ button.project-case__chapter:focus-visible {
   margin: 0;
 }
 
-.explorations__placeholder {
-  width: 100%;
-  aspect-ratio: 16 / 10;
-  border-radius: clamp(10px, 1.4vw, 16px);
-  background: color-mix(in srgb, var(--text-dark) 5%, var(--surface-muted));
-  border: 1px solid color-mix(in srgb, var(--text-dark) 8%, transparent);
-}
-
 .explorations__cover {
   width: 100%;
   aspect-ratio: 16 / 10;
@@ -2607,6 +2964,30 @@ button.project-case__chapter:focus-visible {
   background: color-mix(in srgb, var(--text-dark) 5%, var(--surface-muted));
   object-fit: cover;
   display: block;
+}
+
+.explorations__media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: clamp(10px, 1.4vw, 16px);
+  border: 1px solid color-mix(in srgb, var(--text-dark) 8%, transparent);
+  background: color-mix(in srgb, var(--text-dark) 5%, var(--surface-muted));
+}
+
+.explorations__media .explorations__cover {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  aspect-ratio: unset;
+  border: none;
+  border-radius: 0;
+  object-fit: contain;
+  object-position: center;
 }
 
 .explorations__caption {

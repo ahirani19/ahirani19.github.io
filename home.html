@@ -383,16 +383,24 @@
           </a>
 
           <a
-            class="module-card module-card--bento module-card--bento-lg bento-documents bento-side-work js-card-open"
+            class="module-card module-card--bento module-card--bento-lg bento-documents bento-side-work module-documents js-card-open"
             id="other-projects"
             href="#side-projects"
             data-view="side-projects"
             aria-label="Documents"
           >
             <div
-              class="module-card__visual module-card__visual--lg"
+              class="module-card__visual module-card__visual--lg module-documents__visual"
               aria-hidden="true"
-            ></div>
+            >
+              <img
+                class="module-documents__cover"
+                src="assets/postit.png"
+                alt=""
+                decoding="async"
+                loading="lazy"
+              />
+            </div>
             <div class="module-card__body-wrap">
               <span class="module-card__title">Documents</span>
               <p class="module-card__body muted">
@@ -879,7 +887,19 @@
               <nav class="project-case__chapters" aria-label="Case study chapters">
                 <ol class="project-case__chapter-list">
                   <li>
-                    <a class="project-case__chapter is-active" href="#claris-summary" data-chapter-link="summary" aria-current="true">Summary</a>
+                    <a class="project-case__chapter is-active" href="#claris-summary" data-chapter-link="summary" aria-current="true">Project Summary</a>
+                  </li>
+                  <li>
+                    <a class="project-case__chapter" href="#claris-background" data-chapter-link="background">Background</a>
+                  </li>
+                  <li>
+                    <a class="project-case__chapter" href="#claris-user-research" data-chapter-link="user-research">User Research</a>
+                  </li>
+                  <li>
+                    <a class="project-case__chapter" href="#claris-feature-development" data-chapter-link="feature-development">Feature Development</a>
+                  </li>
+                  <li>
+                    <a class="project-case__chapter" href="#claris-beta-ui" data-chapter-link="beta-ui">Beta Testing &amp; UI</a>
                   </li>
                 </ol>
               </nav>
@@ -896,6 +916,34 @@
               </header>
               <section id="claris-summary" class="project-case__section" data-chapter-section="summary" data-transition-piece>
                 <h2 class="project-case__section-title">Project Summary</h2>
+                <div class="project-case__section-body">
+                  <p>Under construction! This will be updated in 1&ndash;2 days.</p>
+                </div>
+              </section>
+
+              <section id="claris-background" class="project-case__section" data-chapter-section="background" data-transition-piece>
+                <h2 class="project-case__section-title">Background</h2>
+                <div class="project-case__section-body">
+                  <p>Under construction! This will be updated in 1&ndash;2 days.</p>
+                </div>
+              </section>
+
+              <section id="claris-user-research" class="project-case__section" data-chapter-section="user-research" data-transition-piece>
+                <h2 class="project-case__section-title">User Research</h2>
+                <div class="project-case__section-body">
+                  <p>Under construction! This will be updated in 1&ndash;2 days.</p>
+                </div>
+              </section>
+
+              <section id="claris-feature-development" class="project-case__section" data-chapter-section="feature-development" data-transition-piece>
+                <h2 class="project-case__section-title">Feature Development</h2>
+                <div class="project-case__section-body">
+                  <p>Under construction! This will be updated in 1&ndash;2 days.</p>
+                </div>
+              </section>
+
+              <section id="claris-beta-ui" class="project-case__section" data-chapter-section="beta-ui" data-transition-piece>
+                <h2 class="project-case__section-title">Beta Testing &amp; UI</h2>
                 <div class="project-case__section-body">
                   <p>Under construction! This will be updated in 1&ndash;2 days.</p>
                 </div>
@@ -1053,13 +1101,74 @@
 
         <div class="page-view page-view--blank" data-view="side-projects" hidden>
           <main class="page-view__main documents-page" data-transition-piece aria-label="Documents">
-            <div class="about__banner" role="status">
-              <span class="about__banner-tag">Heads up</span>
-              <span class="about__banner-text">Under construction &mdash; check back soon.</span>
-            </div>
             <header class="documents__intro">
               <h1 class="documents__title">Documents</h1>
+              <p class="documents__subtitle">Notes and extras pinned to the wall.</p>
             </header>
+
+            <div class="documents-wall">
+              <section class="documents-cluster" aria-label="Aashi's reading list affinity cluster">
+                <article class="documents-note documents-note--theme" style="--note-rotate: -1deg" role="listitem">
+                  <h2 class="documents-note__heading">Aashi&rsquo;s reading list</h2>
+                </article>
+
+                <div class="documents-cluster__group" role="list">
+                  <article class="documents-note documents-note--insight" style="--note-rotate: 1.5deg" role="listitem">
+                    <h3 class="documents-note__title">Almond</h3>
+                    <p class="documents-note__meta">Won-pyung Sohn &middot; prose on the human condition</p>
+                    <p class="documents-note__text">For the majority of the literary world writing about emotions and emotionally rich experiences, the author does a phenomenal job writing a world devoid of it. There are chapters I return to all the time because they&rsquo;re so beautifully written.</p>
+                  </article>
+
+                  <article class="documents-note documents-note--insight" style="--note-rotate: -2deg" role="listitem">
+                    <h3 class="documents-note__title">Babel</h3>
+                    <p class="documents-note__meta">R.F. Kuang &middot; didactic fiction</p>
+                    <p class="documents-note__text">Meditates heavily on linguistics and on translation as a practice. If you grew up speaking another language, please read this. The characters are the most memorable part of the story.</p>
+                  </article>
+
+                  <article class="documents-note documents-note--insight" style="--note-rotate: 0.8deg" role="listitem">
+                    <h3 class="documents-note__title">Punching the Air</h3>
+                    <p class="documents-note__meta">Ibi Zoboi &amp; Yusef Salaam &middot; free-verse, contemporary</p>
+                    <p class="documents-note__text">Unique format if you aren&rsquo;t a fan of usual prose. Written by a member of the Exonerated Five, the story is devastating and means even more when you realize the point of view is that of a child&rsquo;s.</p>
+                  </article>
+
+                  <article class="documents-note documents-note--insight" style="--note-rotate: -1.8deg" role="listitem">
+                    <h3 class="documents-note__title">A Man Called Ove</h3>
+                    <p class="documents-note__meta">Fredrik Backman &middot; contemporary fiction</p>
+                    <p class="documents-note__text">Uncanny, dry humor with just the right amount of love.</p>
+                  </article>
+                </div>
+              </section>
+
+              <section class="documents-cluster documents-cluster--art" aria-label="Aashi's artwork affinity cluster">
+                <article class="documents-note documents-note--theme" style="--note-rotate: 1.2deg" role="listitem">
+                  <h2 class="documents-note__heading">Aashi&rsquo;s artwork</h2>
+                </article>
+
+                <div class="documents-cluster__group documents-cluster__group--art" role="list">
+                  <div class="documents-art-piece" role="listitem">
+                    <article class="documents-note documents-note--insight documents-note--art" style="--note-rotate: -1.5deg">
+                      <figure class="documents-note__figure">
+                        <img class="documents-note__image" src="assets/subway.jpg" alt="Colored pencil illustration of five people on a bench at 14 Street subway station" width="800" height="600" loading="lazy" decoding="async" />
+                      </figure>
+                    </article>
+                    <article class="documents-note documents-note--caption" style="--note-rotate: 1deg">
+                      <p class="documents-note__caption">A candid of a subway stop I used to get off at all the time</p>
+                    </article>
+                  </div>
+
+                  <div class="documents-art-piece" role="listitem">
+                    <article class="documents-note documents-note--insight documents-note--art" style="--note-rotate: 2deg">
+                      <figure class="documents-note__figure">
+                        <img class="documents-note__image" src="assets/gradcap.jpg" alt="Graduation cap painted with graffiti-style lettering reading no expectations" width="800" height="800" loading="lazy" decoding="async" />
+                      </figure>
+                    </article>
+                    <article class="documents-note documents-note--caption" style="--note-rotate: -0.8deg">
+                      <p class="documents-note__caption">My actual high school graduation cap inspired by Spider-Verse</p>
+                    </article>
+                  </div>
+                </div>
+              </section>
+            </div>
 
             <div class="page-view__return-top">
               <button type="button" class="return-top js-return-top">↑ Back to top</button>
